@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecipeDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Home Button -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="32dp"
+            android:gravity="center_vertical">
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/left_arrow"
+                android:contentDescription="@string/home_button"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="16dp" />
+
+            <TextView
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/md_theme_primary"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+        <!-- Recipe Name -->
+        <TextView
+            android:id="@+id/recipe_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/abril_fatface_regular"
+            android:textColor="@color/md_theme_onSurface"
+            android:gravity="center"
+            android:text="@string/recipe_name"
+            android:textAllCaps="true"
+            android:textSize="25sp" />
+
+        <!-- Recipe Image -->
+        <FrameLayout
+            android:id="@+id/image_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recipe_name"
+            android:layout_centerHorizontal="true"
+            android:elevation="10dp">
+            <ImageView
+                android:id="@+id/recipe_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/recipe01"
+                android:contentDescription="@string/recipe_image"
+                android:adjustViewBounds="true"
+                android:background="@drawable/rounded_corners"
+                android:clipToOutline="true"
+                android:scaleType="fitCenter"
+                android:layout_margin="16dp"
+                tools:targetApi="s" />
+        </FrameLayout>
+
+        <!-- Recipe Information -->
+        <LinearLayout
+            android:id="@+id/info_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/image_frame"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:elevation="4dp">
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center_vertical"
+               android:backgroundTint="@color/md_theme_tertiaryContainer"
+               app:cardCornerRadius="10dp">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:layout_margin="16dp">
+
+                   <!-- Description -->
+                   <TextView
+                       android:id="@+id/recipe_desc_title"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="@string/recipe_desc"
+                       android:fontFamily="@font/poppins_black"
+                       android:textColor="@color/md_theme_onTertiaryContainer"
+                       android:textStyle="bold"
+                       android:textSize="18sp"
+                       android:gravity="center" />
+
+                   <TextView
+                       android:id="@+id/recipe_desc"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="@string/recipe_desc"
+                       android:fontFamily="@font/poppins_medium"
+                       android:textColor="@color/md_theme_onTertiaryContainer"
+                       android:textSize="14sp"
+                       android:layout_marginBottom="32dp"/>
+
+               </LinearLayout>
+           </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/how_to_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_black"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="@string/how"
+                android:textColor="@color/md_theme_onTertiaryContainer"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <WebView
+                android:id="@+id/recipe_vid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
